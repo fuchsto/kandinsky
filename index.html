@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Kandinsky by fuchsto</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/fuchsto/kandinsky">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/fuchsto/kandinsky/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/fuchsto/kandinsky/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Kandinsky</h1>
+          <p>Visual rendering of sound in real-time 3D</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/fuchsto">fuchsto</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a id="kandinsky" class="anchor" href="#kandinsky" aria-hidden="true"><span class="octicon octicon-link"></span></a>kandinsky</h1>
+
+<p>Visual rendering of sound in real-time 3D</p>
+
+<h2>
+<a id="components" class="anchor" href="#components" aria-hidden="true"><span class="octicon octicon-link"></span></a>Components</h2>
+
+<p>The main components of kandinsky are:</p>
+
+<ul>
+<li>The audio processing server, running on the hardware that records the audio input. The server application performs signal transformation and feature extraction, such as beat detection. Results from feature extraction are streamed to clients. A setup of kandinsky may have several servers running that specialize in different tasks. </li>
+<li>Clients that interpret data received from a kandinsky server, usually as a 3D rendering. </li>
+</ul>
+
+<p>The processing on both server- and client side consists of daisy-chained plugins that are configured in the kandisky main application.</p>
+
+<h2>
+<a id="communication-protocols" class="anchor" href="#communication-protocols" aria-hidden="true"><span class="octicon octicon-link"></span></a>Communication protocols</h2>
+
+<p>If <strong>GUI events</strong> are provided by a server instance, clients can subscribe to its GUI socket. 
+GUI Messages are broadcasted as JSON objects. </p>
+
+<p>Real-time <strong>data from feature extraction</strong> is sent on one-way channels using simple binary packages broadcasted via UDP.</p>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<p>The kandinsky project is built depending on the following libraries: </p>
+
+<h3>
+<a id="server-application" class="anchor" href="#server-application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Server application</h3>
+
+<ul>
+<li>
+<a href="http://github.com/siemens/embb">EMBB</a>, optionally using <a href="http://github.com/fuchsto/embb">my modified fork of EMBB</a>
+</li>
+<li><a href="FFTW,%20parallelized%20using%20EMBB">FFTW-EMBB</a></li>
+</ul>
+
+<h3>
+<a id="client-application" class="anchor" href="#client-application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Client application</h3>
+
+<ul>
+<li>GTK+ for clients with GUI dialogs</li>
+<li>OpenGL and the <a href="http://github.com/siemens/embb">official</a> or <a href="http://github.com/fuchsto/embb">modified version</a> of EMBB for 3D rendering clients</li>
+</ul>
+
+<h2>
+<a id="build-instructions" class="anchor" href="#build-instructions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Build instructions</h2>
+
+<p>Clone this repository and use CMake to generate a native build environment. </p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
